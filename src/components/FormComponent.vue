@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "FormComponenets",
+  name: "FormComponents",
   data() {
     return {
       message: "Format Employee Table",
@@ -15,5 +15,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: brown;
+}
 </style>
