@@ -1,10 +1,8 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
-    <PersonInfo />
-    <PersonInfo />
-    <PersonInfo />
-    <PersonInfo />
+    <PersonInfo name = "Bank" salary = 50000 />
+    <PersonInfo name = "Bow" salary = 30000 />
+    <PersonInfo name = "Belle" salary = 15000 />
   </div>
 </template>
   
@@ -17,14 +15,12 @@ export default {
   },
   data() {
     return {
-      message: "List name of employee",
+      
     };
   },
 };
 </script>
   
 <style scoped>
-h1 {
-  color: green;
-}
+
 </style>

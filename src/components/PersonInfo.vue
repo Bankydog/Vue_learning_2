@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      {{ message }}
+      {{ name }} {{ salary }}
     </p>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
       message: "employee information",
     };
   },
+  props: ["name", "salary"]
 };
 </script>
 
