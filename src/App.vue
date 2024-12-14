@@ -1,7 +1,7 @@
 <template>
   <div>
     <FormComponent />
-    <ListData :employees = "employees" />
+    <ListData :employees="employees" />
   </div>
 </template>
 
@@ -16,28 +16,7 @@ export default {
   },
   data() {
     return {
-      employees: [
-        {
-          name: "Bank",
-          salary: 50000,
-        },
-        {
-          name: "Bow",
-          salary: 20000,
-        },
-        {
-          name: "Belle",
-          salary: 20000,
-        },
-        {
-          name: "mergency",
-        },
-        {
-          name: "Nam",
-          salary: 500
-          ,
-        },
-      ],
+      employees: [],
     };
   },
 };
