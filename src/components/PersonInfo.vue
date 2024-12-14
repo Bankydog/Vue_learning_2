@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      {{ message }}
+      name : {{ name }} salary: {{ salary }}
     </p>
   </div>
 </template>
@@ -11,9 +11,18 @@ export default {
   name: "PersonInfo",
   data() {
     return {
-      message: "employee information",
     };
   },
+  props: {
+    name:{
+      type:String,
+      required:true
+    },
+    salary:{
+      type:Number,
+      default:15000
+    }
+  }
 };
 </script>
 

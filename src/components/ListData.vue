@@ -1,10 +1,13 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
-    <PersonInfo />
-    <PersonInfo />
-    <PersonInfo />
-    <PersonInfo />
+    <ul>
+      <Person-info
+        v-for="(item, index) in employees"
+        :key="index"
+        :name="item.name"
+        :salary="item.salary"
+      />
+    </ul>
   </div>
 </template>
   
@@ -15,16 +18,12 @@ export default {
   components: {
     PersonInfo,
   },
+  props: ["employees"],
   data() {
-    return {
-      message: "List name of employee",
-    };
+    return {};
   },
 };
 </script>
   
 <style scoped>
-h1 {
-  color: green;
-}
 </style>
