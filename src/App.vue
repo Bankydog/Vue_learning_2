@@ -36,7 +36,7 @@ div {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
 }
 </style>
 

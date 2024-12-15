@@ -70,6 +70,10 @@ button:hover {
   background-color: #45a049;
 }
 
+h1 {
+  margin: 10px;
+}
+
 p {
   margin-top: 10px;
   font-size: 16px;
