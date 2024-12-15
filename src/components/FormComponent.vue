@@ -1,19 +1,29 @@
 <template>
-  <form>
+  <form @submit.prevent="subMitForm">
     <div class="form-control">
       <label for="emp-name">Enter Name</label>
-      <input type="text" v-model.trim="employee.name" />
+      <input
+        id="emp-name"
+        type="text"
+        v-model.trim="employee.name"
+        placeholder="Enter employee name"
+      />
     </div>
     <div class="form-control">
       <label for="emp-salary">Enter Salary</label>
-      <input type="number" v-model.trim="employee.salary" />
+      <input
+        id="emp-salary"
+        type="number"
+        v-model.trim="employee.salary"
+        placeholder="Enter salary"
+        min="0"
+      />
     </div>
     <div>
-      <button>Save</button>
+      <button type="submit">Save</button>
     </div>
   </form>
 </template>
-
 <script>
 export default {
   name: "FormComponents",
@@ -21,13 +31,23 @@ export default {
     return {
       employee: {
         name: "",
-        salary: 0,
+        salary: "",
       },
     };
   },
+  methods: {
+    subMitForm() {
+      const newEmployee = {
+        name: this.employee.name,
+        salary: this.employee.salary,
+      };
+      this.$emit("save", newEmployee);
+      this.employee.name = "";
+      this.employee.salary = "";
+    },
+  },
 };
 </script>
-
 <style scoped>
 form {
   background: rgba(60, 179, 113, 0.5);
@@ -41,10 +61,10 @@ form {
   align-items: center;
   justify-content: space-between;
 }
-label{
+label {
   margin-right: 10px;
 }
-input{
+input {
   height: 20px;
   border-radius: 10px;
   text-align: center;
