@@ -1,20 +1,25 @@
 <template>
   <MyCard>
-    <h1>Employees info</h1>
-    <button @click="showDetail">More Detail</button>
-    <button @click="deleteEmployee">Delete</button>
-    <div>
-      <p v-show="isVisible">Name: {{ name }} | Salary: {{ salary }}</p>
-    </div>
+    <template v-slot:card-header>
+      <h1>Employees info</h1>
+    </template>
+    <template v-slot:card-button>
+      <button @click="showDetail">More Detail</button>
+      <button @click="deleteEmployee">Delete</button></template>
+    <template v-slot:card-content
+      ><div>
+        <p v-show="isVisible">Name: {{ name }} | Salary: {{ salary }}</p>
+      </div>
+    </template>
   </MyCard>
 </template>
 
 <script>
-import MyCard from './MyCard.vue';
+import MyCard from "./MyCard.vue";
 export default {
   name: "PersonInfo",
   components: {
-    MyCard
+    MyCard,
   },
   props: {
     id: {

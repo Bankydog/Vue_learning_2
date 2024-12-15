@@ -2,7 +2,9 @@
   <li>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStIpoB0Q4z3onxYzuzx5ugSVMOBwLVQ2EL0A&s" alt="">
     <hr>
-    <slot></slot>
+    <slot name="card-header"></slot>
+    <slot name="card-button"></slot>
+    <slot name="card-content"></slot>
   </li>
 </template>
 

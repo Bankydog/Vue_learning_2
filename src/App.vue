@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Employee's Data</h1>
     <FormComponent />
     <ListData :employees="employees" />
   </div>
@@ -37,6 +38,10 @@ div {
   justify-content: center;
   text-align: center;
   padding: 8px;
+  background: rgb(24, 24, 24);
+  color: white;
+}
+h1 {
 }
 </style>
 
