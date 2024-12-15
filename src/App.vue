@@ -1,14 +1,21 @@
 <template>
   <div>
     <h1>Employee's Data</h1>
-    <FormComponent />
-    <ListData :employees="employees" />
+    <FormComponent @save="insertEmployee" />
+    <section class="employee-content" v-if="employees.length > 0">
+      <ListData
+        :employees="employees"
+        @update-visibility="updateEmployeeVisibility"
+        @delete-employee="deleteEmployee"
+      />
+    </section>
   </div>
 </template>
 
 <script>
 import ListData from "./components/ListData.vue";
 import FormComponent from "./components/FormComponent.vue";
+
 export default {
   name: "App",
   components: {
@@ -19,6 +26,24 @@ export default {
     return {
       employees: [],
     };
+  },
+  methods: {
+    insertEmployee(data) {
+      const newEmployee = {
+        ...data,
+        id: this.employees.length > 0 ? this.employees[this.employees.length - 1].id + 1 : 1,
+        isVisible: false,
+      };
+      this.employees.push(newEmployee);
+    },
+    updateEmployeeVisibility(id) {
+      this.employees = this.employees.map((item) =>
+        item.id === id ? { ...item, isVisible: !item.isVisible } : item
+      );
+    },
+    deleteEmployee(id) {
+      this.employees = this.employees.filter((item) => item.id !== id);
+    },
   },
 };
 </script>
@@ -41,7 +66,5 @@ div {
   background: rgb(24, 24, 24);
   color: white;
 }
-h1 {
-}
-</style>
 
+</style>
