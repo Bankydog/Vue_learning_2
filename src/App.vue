@@ -23,4 +23,20 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: 0px;
+  padding: 0px;
+  margin: 0px;
+}
 </style>
+<style scoped>
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+</style>
+
